@@ -4,9 +4,11 @@ A serverless risk analytics pipeline on AWS. It ingests daily market data for a 
 
 ## Architecture
 
+```
 EventBridge (weekday schedule) → Lambda (risk_data_pull) → S3
 S3 → Lambda in a private VPC (risk_db_loader) → PostgreSQL on RDS
 CloudWatch alarm on Lambda errors → SNS email alert
+```
 
 ## Risk metrics
 
